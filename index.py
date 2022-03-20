@@ -2,6 +2,7 @@ from dash import dcc
 from dash import html
 import dash_bootstrap_components as dbc
 from app import app
+from pages import tab1, tab2
 
 def serve_layout():
     return dbc.Container(
@@ -17,6 +18,25 @@ def serve_layout():
                             }
                         ),
                 )
+            ),
+            dbc.Row(
+                [
+                    dbc.Col(
+                        [
+                            dcc.Tabs(
+                                [
+                                    dcc.Tab(tab1.tab1_contents(), value = 'tab1', label='Tab 1'),
+                                    dcc.Tab(tab2.tab2_contents(), value='tab2', label='Tab 2'),
+                                ],
+                                value = 'tab1',
+                                id='tabs-master',
+                                style = {
+                                    'padding-top': '5px'
+                                }
+                            )
+                        ]
+                    )
+                ]
             )
         ],
         fluid = True,
