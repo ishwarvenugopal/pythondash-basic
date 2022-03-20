@@ -4,3 +4,4 @@ Starter code for a basic web dashboard using Python Dash. It implements the foll
 
 * Single page web app
 * Multiple tabs
+* Simple username, password authentication ('test' for both)
